@@ -95,26 +95,24 @@ Write code following our style guide.
 
 ### 4. Add Tests
 
-```rust
-#[cfg(test)]
-mod tests {
-    use super::*;
+```python
+def test_my_feature():
+    from judicial_reasoning_framework import JudicialReasoningFramework
     
-    #[test]
-    fn test_my_feature() {
-        // Test code
-    }
-}
+    jrf = JudicialReasoningFramework()
+    # Test code
+    verdict = jrf.run_protocol("test case")
+    assert verdict.certainty > 0.5
 ```
 
 ### 5. Run Tests
 
 ```bash
-# Rust
-cargo test
-
-# Python
+# Python tests
 pytest
+
+# With coverage
+pytest --cov=judicial_reasoning_framework
 ```
 
 ### 6. Commit Changes
@@ -167,13 +165,13 @@ def analyze(self,input_text:str)->Verdict:
 
 Test individual functions:
 
-```rust
-#[test]
-fn test_forensic_analysis() {
-    let forensic = ForensicDeconstruction::new();
-    let result = forensic.analyze("test input");
-    assert!(result.is_ok());
-}
+```python
+def test_forensic_analysis():
+    from judicial_reasoning_framework import JudicialReasoningFramework
+    
+    jrf = JudicialReasoningFramework()
+    verdict = jrf.run_protocol("test input")
+    assert verdict is not None
 ```
 
 ### Integration Tests
@@ -191,23 +189,24 @@ def test_full_protocol():
 
 ### Code Comments
 
-```rust
-/// Analyzes input text and extracts facts, desires, and context.
-///
-/// # Arguments
-///
-/// * `input` - Raw input text to analyze
-///
-/// # Returns
-///
-/// `ForensicAnalysis` containing extracted information
-///
-/// # Errors
-///
-/// Returns `ForensicError::InsufficientData` if input is too short
-pub fn analyze(&self, input: &str) -> Result<ForensicAnalysis, ForensicError> {
-    // Implementation
-}
+Use clear, descriptive comments in your code:
+
+```python
+def analyze(input_text: str) -> Verdict:
+    """
+    Analyze input text and return verdict.
+    
+    Args:
+        input_text: Raw input text to analyze
+        
+    Returns:
+        Verdict containing conclusion, certainty, and recommendations
+        
+    Raises:
+        ValueError: If input is too short or invalid
+    """
+    # Implementation
+    pass
 ```
 
 ### Markdown Documentation
