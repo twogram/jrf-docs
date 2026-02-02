@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block extrahead %}
+  {{ super() }}
+  <!-- Custom meta tags -->
+  <meta name="description" content="Judicial Reasoning Framework - Universal multi-agent reasoning based on judicial logic">
+  <meta name="keywords" content="JRF, judicial reasoning, multi-agent, AI, LLM, reasoning framework">
+  <meta name="author" content="twogram">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="{{ config.site_name }}">
+  <meta property="og:description" content="{{ config.site_description }}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ config.site_url }}">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ config.site_name }}">
+  <meta name="twitter:description" content="{{ config.site_description }}">
+{% endblock %}
+
+{% block announce %}
+  <div class="md-announce">
+    <div class="md-announce__inner md-grid md-typeset">
+      🎉 <strong>JRF v0.2.0 released!</strong> Now available on PyPI with Python bindings and Beam Search.
+      <a href="{{ config.repo_url }}/releases">View releases →</a>
+    </div>
+  </div>
+{% endblock %}

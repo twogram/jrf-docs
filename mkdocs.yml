@@ -1,0 +1,112 @@
+site_name: JRF Documentation
+site_url: https://twogram.github.io/jrf-docs/
+site_description: Judicial Reasoning Framework - Universal multi-agent reasoning based on judicial logic
+site_author: twogram
+repo_name: twogram/jrf
+repo_url: https://github.com/twogram/jrf
+
+theme:
+  name: material
+  custom_dir: overrides
+  palette:
+    # Light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: deep purple
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: deep purple
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.code.annotate
+  
+  icon:
+    repo: fontawesome/brands/github
+  
+  favicon: assets/favicon.png
+
+plugins:
+  - search
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - admonition
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - Getting Started:
+      - Installation: getting-started/installation.md
+      - Quick Start: getting-started/quick-start.md
+      - First Verdict: getting-started/first-verdict.md
+  - Core Concepts:
+      - Overview: concepts/overview.md
+      - Forensic Deconstruction: concepts/forensic-deconstruction.md
+      - Context Lock: concepts/context-lock.md
+      - Multi-Path Reasoning: concepts/multi-path-reasoning.md
+      - Moot Court: concepts/moot-court.md
+      - Verdict Synthesis: concepts/verdict-synthesis.md
+  - Guides:
+      - Beam Search Strategy: guides/beam-search.md
+      - Python Bindings: guides/python-bindings.md
+  - Integrations:
+      - Agent-Lightning: integrations/agent-lightning.md
+      - Microsoft Agent Framework: integrations/microsoft-agent-framework.md
+      - LangChain: integrations/langchain.md
+  - API Reference:
+      - Python API: api/python-api.md
+  - Examples:
+      - Medical Diagnosis: examples/medical-diagnosis.md
+      - Legal Analysis: examples/legal-analysis.md
+      - Financial Compliance: examples/financial-compliance.md
+  - About:
+      - Changelog: about/changelog.md
+      - Roadmap: about/roadmap.md
+      - Contributing: about/contributing.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/twogram/jrf
+    - icon: fontawesome/brands/python
+      link: https://pypi.org/project/judicial-reasoning-framework/
+
+extra_css:
+  - stylesheets/extra.css

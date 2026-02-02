@@ -1,0 +1,78 @@
+:root {
+  --jrf-primary: #3f51b5;
+  --jrf-accent: #673ab7;
+  --jrf-gradient: linear-gradient(135deg, var(--jrf-primary), var(--jrf-accent));
+}
+
+/* Custom header gradient */
+.md-header {
+  background: var(--jrf-gradient);
+}
+
+/* Navigation tabs gradient */
+.md-tabs {
+  background: var(--jrf-gradient);
+}
+
+/* Code blocks with accent border */
+.highlight {
+  border-left: 4px solid var(--jrf-accent);
+  border-radius: 4px;
+}
+
+/* Admonition styling */
+.admonition.tip {
+  border-left-color: var(--jrf-accent);
+}
+
+.admonition.note {
+  border-left-color: var(--jrf-primary);
+}
+
+/* Cards grid */
+.grid.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.grid.cards > * {
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 4px;
+  padding: 1rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.grid.cards > *:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Mermaid diagrams */
+.mermaid {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+/* Custom badges */
+.md-typeset img[alt*="badge"] {
+  margin: 0 0.2rem;
+}
+
+/* Responsive tables */
+.md-typeset table:not([class]) {
+  display: block;
+  overflow-x: auto;
+}
+
+/* Code copy button styling */
+.md-clipboard {
+  color: var(--jrf-accent);
+}
+
+/* Search highlight */
+.md-search-result__teaser mark {
+  background-color: var(--jrf-accent);
+  color: white;
+}
